@@ -1,37 +1,27 @@
 <div id="<%= dom_id student %>">
-  <p>
-    <strong>Rut:</strong>
+
+  <td>
     <%= student.rut %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Name:</strong>
+  <td>
     <%= student.name %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Lastname1:</strong>
+  <td>
     <%= student.lastname1 %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Lastname2:</strong>
+  <td>
     <%= student.lastname2 %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Address:</strong>
-    <%= student.address %>
-  </p>
+  <td>
+      <%= student.course.code %>
+  </td>
 
-  <p>
-    <strong>Region:</strong>
-    <%= student.region_id %>
-  </p>
-
-  <p>
-    <strong>Course:</strong>
-    <%= student.course_id %>
-  </p>
+    <td>
+        <%= student.course.plan.description %>
+  </td>
 
 </div>

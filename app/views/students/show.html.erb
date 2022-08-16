@@ -1,10 +1,57 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @student %>
-
-<div>
-  <%= link_to "Edit this student", edit_student_path(@student) %> |
-  <%= link_to "Back to students", students_path %>
-
-  <%= button_to "Destroy this student", @student, method: :delete %>
+<div class="d-flex flex-wrap justify-content-center">
+  <div class="card text-dark my-3" style="max-width: 540px;">
+    <div class="row m-0 p-0">
+      <div class="col-4" style="width: 300px">
+      </div>
+      <div class="col-8 border-start border-secondary p-0 m-0">
+        <div class="card-body bg-white p-0 m-0 rounded-end">
+          <h5 class="card-title p-0 m-0 ps-3 my-3">
+            <strong>Nombre:</strong>
+            <%=@student.name  %>
+          </h5>
+          <p class="card-text p-0 ps-3">
+            <strong>Rut:</strong>
+            <%=@student.rut  %>
+          </p>
+          <p class="card-text p-0 ps-3">
+            <strong>Apellido Paterno:</strong>
+            <%=@student.lastname1  %>
+          </p>
+          <p class="card-text p-0 ps-3">
+            <strong>Apellido Materno:</strong>
+            <%=@student.lastname2  %>
+          </p>
+          <p class="card-text p-0 ps-3">
+            <strong>Code:</strong>
+            <%=@student.course.code  %>
+          </p>
+          <p class="card-text p-0 ps-3">
+            <strong>Descripcion:</strong>
+            <%=@student.course.plan.description  %>
+          </p>
+          <p class="card-text m-0 p-0 ps-3">
+            <small class="text-muted">
+              <strong>Fecha Inicio:</strong>
+              <%=@student.course.startdate %>
+            </small>
+          </p>
+          <p class="card-text p-0 ps-3">
+            <small class="text-muted">
+              <strong>Fecha Termino:</strong>
+              <%=@student.course.enddate  %>
+            </small>
+          </p>
+        </div>
+        <p class="card-footer d-flex justify-content-start m-0 p-0">
+        </p>
+      </div> 
+    </div> 
+  </div> 
+  <div class="col-12 text-center">
+  <h3><%= link_to "Volver", students_path, class:"badge text-bg-secondary border border-white border-2 fw-bold ms-auto"%></h3>
 </div>
+</div> 
+
+
+

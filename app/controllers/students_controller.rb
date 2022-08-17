@@ -3,9 +3,11 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.all
-    @courses = Course.all
-    #@plans = Plan.all
+      # @students = Student.includes(:course).order(created_at: :asc)
+      @q = Student.ransack(params[:q])
+      @students = @q.result(:distinct => true).includes(:course, :region)
+      @courses = Course.all
+      @regions = Region.all
   end
 
   # GET /students/1 or /students/1.json

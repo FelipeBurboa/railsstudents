@@ -1,6 +1,22 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="text-center">Estudiantes</h1>
+<div class="container">
+  <%= search_form_for @q do |f| %>
+    <div class="d-flex align-items-center bg-white rounded-top p-3">
+    <div class="col-3 me-3">
+        <%= f.label :region_name_cont, 'Region', :class => 'form-label d-block p-0 m-0 fw-bold' %>
+        <%= f.select :region_name_cont, options_for_select(@regions.map { |r| [r.name]}), {:include_blank => "Elige una region"}, {:class => 'form-select'} %>
+      </div>
+      <div class="col-3">
+        <%= f.label :course_code_cont, "Curso", :class => 'form-label d-block p-0 m-0 fw-bold' %>
+        <%= f.select :course_code_cont, options_for_select(@courses.map { |c| [c.code]}), {:include_blank => "Elige un curso"}, {:class => 'form-select'} %>
+      </div>
+      <div class="ms-3 align-self-end">
+        <%= f.submit "Filtrar", {:class => 'btn btn-primary p-4'} %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-<h1>Estudiantes</h1>
 
 <table class="table table-hover">
   <thead>
